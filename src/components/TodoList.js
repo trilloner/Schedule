@@ -1,5 +1,5 @@
 import React from 'react';
-import {ListGroup} from 'react-bootstrap'
+import {ListGroup , Accordion, Card} from 'react-bootstrap'
 import TodoItem from './TodoItem'
 
 
@@ -16,12 +16,13 @@ class TodoList extends React.Component{
     render(){
         const items = this.props.items;
         const all_items=items.map((item, index) => 
-        <TodoItem name={item.name} key={index} country={item.position}></TodoItem>
+        <TodoItem name={item.name} key={index} country={item.position} hash={item.index}></TodoItem>
         )
         return(
-            <ListGroup>
+            <Accordion>
                 {all_items}
-            </ListGroup>
+            </Accordion>
+            
         );
     }
 }

@@ -9,18 +9,26 @@ class ModalWindow extends React.Component{
         super(props);
         this.state={
             name:'',
-            position: ''
+            position: '',
+            index:1
         }
        
       }
 
       handlerEventName=event=>{
-        this.setState({name: event.target.value})
+        //   let index = this.state.index;
+        //   let temp = index+1;
+        this.setState({name: event.target.value })
       }
       handlerEventPos = event =>{
         this.setState({position: event.target.value})
       }
-      
+      counter=()=>{
+          let index = this.state.index;
+          let temp = index+1;
+          this.setState({index:temp})
+
+      }
     render(){
         return(
             <div>
@@ -50,7 +58,7 @@ class ModalWindow extends React.Component{
                 <Button onClick={()=> {this.props.updateData(false)}} variant="secondary">
                     Close
                 </Button>
-                <Button onClick={()=>{this.props.addElement({name: this.state.name , position: this.state.position});this.props.updateData(false) }}>
+                <Button onClick={()=>{this.props.addElement({name: this.state.name , position: this.state.position, index:this.state.index});this.props.updateData(false);this.counter()}}>
                     Submit
                 </Button>
 

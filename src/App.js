@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
     this.state={
      items:[
-       {name: 'hello', position:'home' }
+       {name: 'hello', position:'home' , index:0}
     ]
     }
    

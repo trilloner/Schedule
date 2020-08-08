@@ -41,3 +41,9 @@ h1{
 #more{
   margin-left: 10px;
 }
+
+
+.accordion>.card>.card-header{
+  background-image: url('./components/screen.jpg');
+  background-position: center;
+}

@@ -2,7 +2,6 @@ import React from 'react';
 import {Modal, Button, Form , InputGroup , FormControl} from 'react-bootstrap'
 
 
-
 class ModalWindow extends React.Component{
 
     constructor(props){
@@ -10,7 +9,8 @@ class ModalWindow extends React.Component{
         this.state={
             name:'',
             position: '',
-            index:1
+            index:1,
+            time: ''
         }
        
       }
@@ -23,11 +23,17 @@ class ModalWindow extends React.Component{
       handlerEventPos = event =>{
         this.setState({position: event.target.value})
       }
+      
       counter=()=>{
           let index = this.state.index;
           let temp = index+1;
           this.setState({index:temp})
 
+      }
+
+      handlerEventTime =event =>{
+        this.setState({time: event.target.value })
+        console.log(event.target.value)
       }
     render(){
         return(
@@ -49,8 +55,9 @@ class ModalWindow extends React.Component{
             aria-label="Username"
             aria-describedby="basic-addon1"
             onChange={this.handlerEventPos}
-
             />
+        
+            <FormControl type='time' onChange={this.handlerEventTime}></FormControl>
 
                 </Form>
             </Modal.Body>
@@ -58,7 +65,7 @@ class ModalWindow extends React.Component{
                 <Button onClick={()=> {this.props.updateData(false)}} variant="secondary">
                     Close
                 </Button>
-                <Button onClick={()=>{this.props.addElement({name: this.state.name , position: this.state.position, index:this.state.index});this.props.updateData(false);this.counter()}}>
+                <Button onClick={()=>{this.props.addElement({name: this.state.name , position: this.state.position, index:this.state.index , time:this.state.time});this.props.updateData(false);this.counter()}}>
                     Submit
                 </Button>
 

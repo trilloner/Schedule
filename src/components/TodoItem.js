@@ -27,10 +27,20 @@ class TodoItem extends React.Component{
             // </ListGroup.Item>
             <Card > 
                 <Accordion.Toggle as={Card.Header} eventKey={this.props.hash.toString()} >
-                {this.props.name}
+                    <div className='todo-header'>
+                        <div>
+                            {this.props.name}    
+                        </div>
+                        <div>
+                            {this.props.time}
+                        </div>
+
+                    </div>
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={this.props.hash.toString()}>
-                 <Card.Body>{this.props.country}</Card.Body>
+                 <Card.Body>{this.props.country}
+                    <a onClick={() => {this.props.delElement(this.props.hash)}}> Delete</a>
+                 </Card.Body>
                 </Accordion.Collapse>
             </Card>
         );

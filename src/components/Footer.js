@@ -15,7 +15,7 @@ constructor  (props){
         return(
             <div>
                 <div class="one"><h1>YOUR TASKS</h1></div>
-                <TodoList items={this.props.items}/> 
+                <TodoList items={this.props.items} delElement={this.props.delElement}/> 
 
             </div>
         );

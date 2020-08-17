@@ -16,7 +16,7 @@ class TodoList extends React.Component{
     render(){
         const items = this.props.items;
         const all_items=items.map((item, index) => 
-        <TodoItem name={item.name} key={index} country={item.position} hash={item.index}></TodoItem>
+        <TodoItem name={item.name} key={index} country={item.position} hash={item.index} time={item.time} delElement={this.props.delElement}></TodoItem>
         )
         return(
             <Accordion>

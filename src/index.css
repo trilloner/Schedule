@@ -46,4 +46,12 @@ h1{
 .accordion>.card>.card-header{
   background-image: url('./components/screen.jpg');
   background-position: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.todo-header{
+  display: flex;
+  justify-content: space-between;
 }
